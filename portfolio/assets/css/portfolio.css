@@ -1,0 +1,339 @@
+:root {
+  --bg: #ffffff;
+  --panel: #f3f6ff;
+  --text: #0b0b0f;
+  --muted: #6b7280;
+  --line: #cfd6e4;
+  --accent: #2563eb;
+  --card: #ffffff;
+  --cardLine: rgba(37, 99, 235, 0.25);
+}
+
+:root.dark {
+  --bg: #0b1020;
+  --panel: #0f1730;
+  --text: #e7ecff;
+  --muted: #a8b3d6;
+  --line: rgba(207, 214, 228, 0.25);
+  --accent: #7aa2ff;
+  --card: #0f1730;
+  --cardLine: rgba(122, 162, 255, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    Arial,
+    sans-serif;
+}
+
+/* Topbar */
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.brand-logo {
+  height: 136px; /* ✅ 로고 크기 조절 포인트 */
+  width: auto;
+  display: block;
+  margin-top: 24px;
+}
+
+.mode-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--cardLine);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Layout */
+.layout {
+  height: calc(100% - 64px);
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+
+.sidebar {
+  border-right: 1px solid var(--line);
+  padding: 18px 14px;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.avatar {
+  width: 192px;
+  height: 192px;
+  border-radius: 14px;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  margin-left: 15px;
+}
+.name {
+  font-weight: 800;
+}
+.meta {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.meta a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.meta a:hover {
+  text-decoration: underline;
+}
+
+/* Tree */
+.tree {
+  margin-top: 10px;
+}
+.tree-node {
+  margin: 4px 0;
+}
+.tree-children {
+  margin-left: 18px;
+  border-left: 1px solid var(--line);
+  padding-left: 12px;
+}
+
+.node {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  padding: 8px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.node:hover {
+  background: rgba(37, 99, 235, 0.06);
+}
+.node.is-active {
+  background: rgba(37, 99, 235, 0.12);
+  color: var(--accent);
+}
+.node .twisty {
+  width: 16px;
+  color: var(--muted);
+}
+.node.leaf .twisty {
+  display: none;
+}
+
+.content {
+  padding: 24px;
+  overflow: auto;
+}
+
+/* Root view cards */
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  max-width: 920px;
+}
+.section-title {
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+.card {
+  border-radius: 16px;
+  border: 2px solid var(--cardLine);
+  background: var(--card);
+  padding: 16px 18px;
+}
+.placeholder {
+  height: 64px;
+  border-radius: 14px;
+  background: rgba(37, 99, 235, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.18);
+}
+.small {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.tree-children.is-collapsed {
+  display: none;
+}
+
+.tree-node.is-open > .node .twisty {
+  color: var(--muted);
+}
+.meta {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.meta-item a {
+  color: var(--accent);
+  text-decoration: none;
+}
+.meta-item a:hover {
+  text-decoration: underline;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  flex: 0 0 18px;
+}
+
+.icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+/* + / - 클릭 영역 크게 만들기 */
+.twisty {
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+
+  /* 선택: 살짝 hover 효과 */
+  transition: background 0.15s ease;
+}
+
+.twisty:hover {
+  background: rgba(37, 99, 235, 0.1);
+}
+.goto-btn {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--cardLine);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+.goto-btn:hover {
+  background: rgba(37, 99, 235, 0.08);
+}
+/* Education page */
+.edu-page {
+  padding: 6px 0;
+}
+
+.page-title {
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.page-divider {
+  height: 1px;
+  background: var(--line);
+  margin-bottom: 18px;
+}
+
+.edu-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 6px 0 18px;
+}
+
+.edu-left {
+  flex: 1;
+}
+
+.edu-date {
+  font-size: 6px;
+  color: var(--muted);
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.edu-school {
+  font-size: 9px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+
+.edu-degree {
+  font-size: 6px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.edu-right {
+  width: 220px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.edu-logo {
+  max-width: 90px;
+  height: auto;
+  display: block;
+}
+
+.edu-divider {
+  height: 1px;
+  background: var(--line);
+  margin: 8px 0 18px;
+}

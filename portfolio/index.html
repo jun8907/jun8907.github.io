@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Junhee's PORTFOLIO</title>
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="assets/css/portfolio.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="./" aria-label="Home">
+        <img
+          id="brandLogo"
+          src="img/Logo.png"
+          data-light="img/Logo.png"
+          data-dark="img/Logo_white.png"
+          alt="HJ"
+          class="brand-logo"
+        />
+      </a>
+
+      <button class="mode-btn" id="modeBtn" type="button">Dark</button>
+    </header>
+
+    <div class="layout">
+      <!-- LEFT -->
+      <aside class="sidebar">
+        <div class="profile">
+          <img class="avatar" src="img/profile.jpg" alt="Hong Junhee profile" />
+          <div class="name">Hong Junhee</div>
+          <div class="meta">
+  <div class="meta-item">
+    <span class="icon" aria-hidden="true">
+      <!-- mail icon -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="1.6" />
+        <path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+    <a href="mailto:hongjunhui1@gmail.com">hongjunhui1@gmail.com</a>
+  </div>
+
+  <div class="meta-item">
+    <span class="icon" aria-hidden="true">
+      <!-- github icon -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.48v-1.72c-2.78.62-3.37-1.12-3.37-1.12-.46-1.2-1.12-1.52-1.12-1.52-.91-.64.07-.63.07-.63 1.01.07 1.54 1.06 1.54 1.06.9 1.58 2.36 1.12 2.94.86.09-.67.35-1.12.64-1.38-2.22-.26-4.56-1.14-4.56-5.08 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05.8-.23 1.65-.35 2.5-.35.85 0 1.7.12 2.5.35 1.9-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.95-2.34 4.82-4.57 5.08.36.32.68.95.68 1.92v2.85c0 .27.18.59.69.48A10.2 10.2 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"
+          fill="currentColor"/>
+      </svg>
+    </span>
+    <a href="https://github.com/jun8907" target="_blank" rel="noreferrer">github.com/jun8907</a>
+  </div>
+
+  <div class="meta-item">
+    <span class="icon" aria-hidden="true">
+      <!-- location icon -->
+      <svg viewBox="0 0 24 24" fill="none">
+        <path d="M12 21s7-4.5 7-11a7 7 0 1 0-14 0c0 6.5 7 11 7 11Z" stroke="currentColor" stroke-width="1.6" />
+        <path d="M12 10.2a2.2 2.2 0 1 0 0-4.4 2.2 2.2 0 0 0 0 4.4Z" stroke="currentColor" stroke-width="1.6" />
+      </svg>
+    </span>
+    <span>Seoul, Republic of Korea</span>
+  </div>
+</div>
+
+        <div class="tree" id="tree">
+          <!-- ROOT -->
+          <div class="tree-node" data-id="root">
+            <button class="node" data-node="root" type="button">
+              <span class="twisty" aria-hidden="true">+</span>
+              <span class="folder" aria-hidden="true">📁</span>
+              root
+            </button>
+
+            <div class="tree-children is-collapsed">
+              <!-- portfolio -->
+              <div class="tree-node" data-id="portfolio">
+                <button class="node" data-node="portfolio" type="button">
+                  <span class="twisty" aria-hidden="true">+</span>
+                  <span class="folder" aria-hidden="true">📁</span>
+                  portfolio
+                </button>
+
+                <div class="tree-children is-collapsed">
+                  <button class="node leaf" data-node="education" type="button">
+                    <span class="folder" aria-hidden="true">📁</span> Education
+                  </button>
+                  <button class="node leaf" data-node="projects" type="button">
+                    <span class="folder" aria-hidden="true">📁</span> Projects
+                  </button>
+                  <button class="node leaf" data-node="awards" type="button">
+                    <span class="folder" aria-hidden="true">📁</span> Awards
+                  </button>
+                  <button class="node leaf" data-node="papers" type="button">
+                    <span class="folder" aria-hidden="true">📁</span> Papers
+                  </button>
+                </div>
+              </div>
+
+              <!-- blog -->
+              <div class="tree-node" data-id="blog">
+                <button class="node" data-node="blog" type="button">
+                  <span class="twisty" aria-hidden="true">+</span>
+                  <span class="folder" aria-hidden="true">📁</span>
+                  blog
+                </button>
+              </div>
+              <div class="tree-node" data-id="ellipsis">
+                <button class="node" data-node="ellipsis" type="button">
+                  <span class="twisty" aria-hidden="true">+</span>
+                  <span class="folder" aria-hidden="true">📁</span>
+                  ...
+                </button>
+
+                <div class="tree-children is-collapsed">
+                  <button class="node leaf" data-node="ellipsis_note" type="button">
+                    <span class="folder" aria-hidden="true">📁</span> Note
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- RIGHT -->
+      <main class="content">
+        <div id="view"></div>
+      </main>
+    </div>
+
+    <script src="assets/js/portfolio.js"></script>
+  </body>
+</html>

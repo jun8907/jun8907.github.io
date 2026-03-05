@@ -1,0 +1,178 @@
+:root {
+  --bg: #ffffff;
+  --text: #0b0b0f;
+  --muted: #6b7280;
+  --line: #cfd6e4;
+  --accent: #2563eb;
+
+  --top: #f3f6ff;
+  --btnLine: rgba(37, 99, 235, 0.28);
+}
+
+:root.dark {
+  --bg: #0b1020;
+  --text: #e7ecff;
+  --muted: #a8b3d6;
+  --line: rgba(207, 214, 228, 0.2);
+  --accent: #7aa2ff;
+
+  --top: #0f1730;
+  --btnLine: rgba(122, 162, 255, 0.3);
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    Arial,
+    sans-serif;
+}
+
+/* 상단바(원하면 삭제 가능) */
+.topbar {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+  background: var(--top);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text);
+}
+.brand-logo {
+  height: 136px;
+  width: auto;
+  display: block;
+  margin-top: 24px;
+}
+
+.mode-btn {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: 1px solid var(--btnLine);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.page {
+  padding: 28px 28px;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* 제목 + 상단 라인 */
+.title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+}
+.rule {
+  height: 1px;
+  background: var(--line);
+  margin-top: 10px;
+}
+
+/* 항목 레이아웃 */
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 0;
+}
+.left {
+  flex: 1;
+}
+.right {
+  width: 260px; /* 스샷처럼 오른쪽 여백 확보 */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.date {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.name {
+  font-size: 16px;
+  font-weight: 900;
+  margin-bottom: 6px;
+}
+.meta {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+/* 항목 사이 라인 */
+.row-rule {
+  height: 1px;
+  background: var(--line);
+}
+
+/* 오른쪽 로고 */
+.logo {
+  max-width: 180px;
+  max-height: 60px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+/* Top nav links */
+.topnav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-left: -210px;
+}
+
+.topnav-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 800;
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+
+.topnav-link:hover {
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+  border-color: rgba(37, 99, 235, 0.18);
+}
+
+.topnav-link.is-active {
+  color: var(--accent);
+  background: rgba(37, 99, 235, 0.1);
+  border-color: rgba(37, 99, 235, 0.28);
+}

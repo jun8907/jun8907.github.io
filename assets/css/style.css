@@ -1,0 +1,224 @@
+:root {
+  --text: #0b0b0f;
+  --muted: #6b7280;
+  --line: #cfd6e4;
+  --bg: #ffffff;
+  --link: #2563eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    'Apple SD Gothic Neo',
+    'Noto Sans KR',
+    Arial,
+    sans-serif;
+}
+
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  padding: 0 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: transparent;
+}
+
+.brand {
+  text-decoration: none;
+  color: var(--text);
+}
+.brand-logo {
+  height: 136px; /* 로고 크기 */
+  width: auto;
+  display: block;
+  margin-top: 24px;
+}
+
+.download {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--link);
+  font-size: 16px;
+}
+.download-img {
+  width: 22px; /* 다운로드 아이콘 크기 */
+  height: 22px;
+  display: block;
+
+  /* 기존 download-icon처럼 박스/테두리 느낌을 유지하고 싶으면 아래 추가 */
+  padding: 3px;
+  border-radius: 6px;
+  border: 1px solid rgba(37, 99, 235, 0.25);
+}
+
+.stage {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 40px;
+  gap: 18px;
+}
+
+.dropzone {
+  width: min(720px, 92vw);
+  height: 280px;
+  border-radius: 18px;
+  border: 2px dashed var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  margin-top: 50px;
+}
+
+.dropzone:hover {
+  border-color: #93a3c7;
+}
+.dropzone.is-dragover {
+  border-color: var(--link);
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.dropzone-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.file-icon {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #111827;
+}
+
+.hint {
+  margin: 0;
+  color: var(--link);
+  font-size: 18px;
+  font-weight: 500;
+}
+.subhint {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.file-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.next-links {
+  display: flex;
+  gap: 14px;
+}
+.ghost-link {
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 13px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(107, 114, 128, 0.25);
+}
+.ghost-link:hover {
+  color: var(--text);
+  border-color: rgba(17, 24, 39, 0.25);
+}
+.loader {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.dropzone.is-loading .dropzone-inner > :not(.loader) {
+  opacity: 0.25;
+  pointer-events: none;
+}
+
+.dropzone.is-loading .loader {
+  display: flex;
+}
+
+.spinner {
+  width: 28px;
+  height: 28px;
+  border: 3px solid rgba(37, 99, 235, 0.25);
+  border-top-color: rgba(37, 99, 235, 1);
+  border-radius: 999px;
+  animation: spin 0.9s linear infinite;
+}
+
+.loading-text {
+  margin: 0;
+  color: #2563eb;
+  font-size: 13px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.hero {
+  width: min(860px, 92vw);
+  text-align: center;
+  margin-top: -100px;
+  margin-bottom: 10px;
+}
+
+.kicker {
+  margin: 0 0 10px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  color: rgba(107, 114, 128, 0.95);
+}
+
+.headline {
+  margin: 0;
+  font-size: clamp(28px, 3.2vw, 44px);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.accent {
+  color: #2563eb;
+}
+
+.lead {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: rgba(107, 114, 128, 0.95);
+}

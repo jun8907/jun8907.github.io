@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Papers | Portfolio</title>
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="assets/css/papers.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="Back to portfolio">
+        <img
+          id="brandLogo"
+          src="../img/Logo.png"
+          data-light="../img/Logo.png"
+          data-dark="../img/Logo_white.png"
+          alt="HJ"
+          class="brand-logo"
+        />
+      </a>
+
+      <nav class="topnav" aria-label="Portfolio sections">
+        <a class="topnav-link" href="../education/">Education</a>
+        <a class="topnav-link" href="../projects/">Projects</a>
+        <a class="topnav-link" href="../awards/">Awards</a>
+        <a class="topnav-link is-active" href="./">Papers</a>
+      </nav>
+
+      <div class="top-actions">
+        <div class="search">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="Search papers..."
+          />
+        </div>
+        <button class="mode-btn" id="modeBtn" type="button">Dark</button>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="wrap">
+        <div class="page-head">
+          <h1 class="title">Papers</h1>
+          <div class="controls" id="chips"></div>
+        </div>
+
+        <div class="divider"></div>
+
+        <section class="list" id="list"></section>
+        <p class="hint" id="hint" hidden>검색/필터 결과가 없어요.</p>
+      </section>
+    </main>
+
+    <script src="assets/js/papers.js"></script>
+  </body>
+</html>

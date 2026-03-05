@@ -3,220 +3,83 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Junhee's Portfolio</title>
-    <meta name="description" content="깃허브 블로그" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>Welcom to my PORTFOLIO</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
-
   <body>
-    <!-- Topbar: Logo + Theme Toggle only -->
     <header class="topbar">
-      <div class="wrap topbar-inner">
-        <a class="logo" href="#">HJH</a>
+      <a class="brand" href="/" aria-label="Home">
+        <img src="assets/img/Logo.png" alt="HH" class="brand-logo" />
+      </a>
 
-        <button
-          class="theme-toggle"
-          id="themeToggle"
-          type="button"
-          aria-label="테마 전환"
-        >
-          <span class="toggle-icon" id="themeIcon">🌙</span>
-          <span class="toggle-text" id="themeText">Dark</span>
-        </button>
-      </div>
+      <!-- 다운로드 링크: assets/files/sample.pdf 를 원하는 파일로 교체 -->
+      <a class="download" href="assets/files/Encrypted_Portfolio.E01" download>
+        <span>Download file</span>
+        <img
+          src="assets/img/download.png"
+          alt=""
+          class="download-img"
+          aria-hidden="true"
+        />
+      </a>
     </header>
 
-    <main class="wrap">
-      <!-- HERO -->
-      <section class="hero">
-        <!-- Left: profile card -->
-        <aside class="card profile-card">
-          <div class="profile-media">
-            <img src="assets/profile.jpg" alt="프로필 사진" />
+    <main class="stage">
+      <div class="hero">
+        <p class="kicker">WELCOME</p>
+        <h1 class="headline">
+          Welcome to my <span class="accent">PORTFOLIO</span>
+        </h1>
+        <p class="lead">
+          Download the key file, then drag & drop it to unlock.
+        </p>
+      </div>
+      <section
+        class="dropzone"
+        id="dropzone"
+        tabindex="0"
+        aria-label="File drop area"
+      >
+        <div class="dropzone-inner">
+          <div class="file-icon" aria-hidden="true">
+            <!-- 심플 파일+다운 아이콘 (SVG) -->
+            <svg width="44" height="44" viewBox="0 0 24 24" fill="none">
+              <path
+                d="M14 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7l-5-5Z"
+                stroke="currentColor"
+                stroke-width="1.5"
+              />
+              <path d="M14 2v5h5" stroke="currentColor" stroke-width="1.5" />
+              <path
+                d="M12 11v7"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+              <path
+                d="M9.5 15.5 12 18l2.5-2.5"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
           </div>
 
-          <div class="profile-meta">
-            <div class="name">홍준희</div>
-            <div class="role">Digital Forensics · Security</div>
-            <div class="mini-links">
-              <a href="" target="_blank" rel="noreferrer">--</a>
-              <span>·</span>
-              <a href="">--</a>
-            </div>
-          </div>
-        </aside>
+          <p class="hint">Drag&Drop file here</p>
+          <p class="subhint" id="subhint">또는 클릭해서 파일 선택</p>
 
-        <!-- Right: intro -->
-        <section class="card intro-card">
-          <p class="eyebrow">Portfolio</p>
-
-          <h1 class="headline">
-            Hello I'm
-            <span class="highlight">Junhee</span>
-          </h1>
-
-          <ul class="bullets">
-            <li>
-              2022.03. ~ 2026.08 중부대학교 정보보호학전공
-              <span class="accent">졸업 예정</span>
-            </li>
-            <li>
-              2022.03. ~ 2026.08 중부대학교 정보보안S/W융합전공
-              <span class="accent">졸업 예정</span>
-            </li>
-            <li>
-              2025.03. ~ 2025.08 화이트햇 스쿨 3기
-              <span class="accent">수료</span>
-            </li>
-          </ul>
-
-          <div class="interest">
-            <div class="interest-title">Interest</div>
-            <div class="chips">
-              <span class="chip">정보보안</span>
-              <span class="chip">Digital Forensics</span>
-              <span class="chip">AI</span>
-              <span class="chip">Cyber Crime</span>
-            </div>
-          </div>
-
-          <div class="actions">
-            <a class="btn primary" href="/projects">
-              <span class="btn-icon">↗</span>
-              프로젝트 바로가기
-            </a>
-            <a class="btn ghost" href="blog/">블로그 보기</a>
-          </div>
-        </section>
-      </section>
-
-      <!-- Divider -->
-      <div class="divider"></div>
-
-      <!-- Sections grid -->
-      <section id="sections" class="sections">
-        <a class="section-card" href="projects/">
-          <div class="s-icon">🧩</div>
-          <div class="s-text">
-            <div class="s-title">
-              Project <span class="muted">· 프로젝트</span>
-            </div>
-            <div class="s-desc">프로젝트, 교육, 공모전</div>
-          </div>
-        </a>
-
-        <a class="section-card" href="thesis/">
-          <div class="s-icon">📚</div>
-          <div class="s-text">
-            <div class="s-title">
-              Papers <span class="muted">· 논문/학술대회</span>
-            </div>
-            <div class="s-desc">학회 논문지, 학술대회, 학술지</div>
-          </div>
-        </a>
-
-        <a class="section-card" href="award/">
-          <div class="s-icon">🏆</div>
-          <div class="s-text">
-            <div class="s-title">Award <span class="muted">· 수상</span></div>
-            <div class="s-desc">대회/공모전 수상 및 성과</div>
-          </div>
-        </a>
-
-        <a class="section-card" href="license/">
-          <div class="s-icon">🪪</div>
-          <div class="s-text">
-            <div class="s-title">
-              License <span class="muted">· 자격증</span>
-            </div>
-            <div class="s-desc">보유 자격증</div>
-          </div>
-        </a>
-
-        <a class="section-card" href="etc/">
-          <div class="s-icon">🗂️</div>
-          <div class="s-text">
-            <div class="s-title">Etc <span class="muted">· 기타</span></div>
-            <div class="s-desc">도구/자료 정리 및 링크 모음</div>
-          </div>
-        </a>
-
-        <a class="section-card" href="blog/">
-          <div class="s-icon">✍️</div>
-          <div class="s-text">
-            <div class="s-title">Blog <span class="muted">· 기록</span></div>
-            <div class="s-desc">기술 정리, 문제 풀이, 일상</div>
-          </div>
-        </a>
-      </section>
-
-      <!-- Footer / Contact -->
-      <footer id="contact" class="footer card">
-        <div class="footer-grid">
-          <div>
-            <div class="foot-label">Email</div>
-            <a class="foot-link" href="mailto:hongjunhui1@gmail.com"
-              >hongjunhui1@gmail.com</a
-            >
-          </div>
-          <div>
-            <div class="foot-label">GitHub</div>
-            <a
-              class="foot-link"
-              target="_blank"
-              rel="noreferrer"
-              href="https://github.com/jun8907"
-              >https://github.com/jun8907</a
-            >
-          </div>
-          <div>
-            <div class="foot-label">--</div>
-            <a class="foot-link" href="blog/"></a>
+          <!-- 실제 파일 선택 input (숨김) -->
+          <input id="fileInput" class="file-input" type="file" />
+          <div class="loader" id="loader" aria-hidden="true">
+            <div class="spinner"></div>
+            <p class="loading-text">File Decrypting...</p>
           </div>
         </div>
-
-        <div class="copy">© <span id="year"></span> Hong Junhee</div>
-      </footer>
+      </section>
     </main>
 
-    <script>
-      // footer year
-      const yearEl = document.getElementById('year');
-      if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-      // theme: system default -> localStorage override
-      const root = document.documentElement;
-      const toggleBtn = document.getElementById('themeToggle');
-      const icon = document.getElementById('themeIcon');
-      const text = document.getElementById('themeText');
-
-      const saved = localStorage.getItem('theme');
-      const prefersDark =
-        window.matchMedia &&
-        window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-      function applyTheme(theme) {
-        root.setAttribute('data-theme', theme);
-        localStorage.setItem('theme', theme);
-        const isDark = theme === 'dark';
-        if (icon) icon.textContent = isDark ? '🌙' : '☀️';
-        if (text) text.textContent = isDark ? 'Dark' : 'Light';
-      }
-
-      // init
-      if (saved === 'dark' || saved === 'light') {
-        applyTheme(saved);
-      } else {
-        applyTheme(prefersDark ? 'dark' : 'light');
-      }
-
-      // toggle
-      if (toggleBtn) {
-        toggleBtn.addEventListener('click', () => {
-          const current = root.getAttribute('data-theme') || 'dark';
-          applyTheme(current === 'dark' ? 'light' : 'dark');
-        });
-      }
-    </script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

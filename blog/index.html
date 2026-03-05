@@ -2,90 +2,60 @@
 <html lang="ko">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Blog | 홍준희</title>
-    <meta name="description" content="포렌식/보안 연구 기록 블로그" />
-    <link rel="stylesheet" href="../assets/style.css" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Junhee's BLOG</title>
+    <link rel="icon" href="../favicon.ico" sizes="any" />
+    <link rel="stylesheet" href="assets/css/blog.css" />
   </head>
   <body>
-    <header class="nav">
-      <div class="container nav-inner">
-        <a class="brand" href="../">← Home</a>
-        <nav class="menu">
-          <a href="../#projects">Projects</a>
-          <a href="../#skills">Skills</a>
-          <a href="../#contact">Contact</a>
-        </nav>
+    <header class="topbar">
+      <a class="brand" href="../portfolio/" aria-label="Back to home">
+        <img
+          id="brandLogo"
+          class="brand-logo"
+          src="../assets/img/Logo.png"
+          data-light="../assets/img/Logo.png"
+          data-dark="../assets/img/Logo_white.png"
+          alt="HJ"
+        />
+      </a>
+
+      <div class="top-actions">
+        <div class="search">
+          <input
+            id="searchInput"
+            type="search"
+            placeholder="검색 (제목, 요약, 태그)"
+          />
+        </div>
+        <button class="mode-btn" id="modeBtn" type="button">Dark</button>
       </div>
     </header>
 
-    <main class="section" style="border-top: none; padding-top: 42px">
-      <div class="container">
-        <div class="section-head">
-          <h2>Blog</h2>
-          <p class="muted">연구/개발/분석 기록을 시리즈로 정리합니다.</p>
+    <main class="page">
+      <section class="wrap">
+        <div class="page-head">
+          <div>
+            <h1 class="title">Blog</h1>
+            <p class="subtitle">기술 블로그</p>
+          </div>
         </div>
 
-        <div class="card" style="margin-top: 18px">
-          <h3 style="margin: 0 0 10px">Start Here</h3>
-          <ul class="list" style="margin-top: 0">
-            <li><a href="#">(예시) Signal 첨부파일 복호화 전체 흐름</a></li>
-            <li>
-              <a href="#">(예시) SQLCipher DB 키/IV 추출: Frida 포인트</a>
-            </li>
-            <li><a href="#">(예시) 메신저 아티팩트 분석 체크리스트</a></li>
-          </ul>
-        </div>
+        <!-- Empty state -->
+        <section class="empty" id="emptyState">
+          <div class="empty-badge">EMPTY • BLOG</div>
+          <h2 class="empty-title">아직 작성된 포스트가 없어요</h2>
+          <p class="empty-desc">
+            첫 글을 추가하면 여기에서 최신 글이 자동으로 리스트업됩니다.
+            검색창으로 제목/요약/태그를 빠르게 찾을 수 있어요.
+          </p>
+        </section>
 
-        <div class="section-head" style="margin-top: 22px">
-          <h2 style="font-size: 1.4rem; margin-bottom: 6px">Latest Posts</h2>
-          <p class="muted">나중에 Jekyll/Hugo로 바꾸면 글 목록 자동화 가능.</p>
-        </div>
-
-        <div class="grid">
-          <article class="card project">
-            <h3>
-              <a href="#">(예시) Frida로 Cipher.init 후킹할 때 흔한 실수</a>
-            </h3>
-            <p class="muted">key/iv 추출이 안 될 때 점검 포인트 정리.</p>
-            <div class="tags"><span>Frida</span><span>Android</span></div>
-          </article>
-
-          <article class="card project">
-            <h3>
-              <a href="#">(예시) Signal .mms / .blob 파일 생성 타이밍 분석</a>
-            </h3>
-            <p class="muted">
-              파일 생성 시점과 경로를 기반으로 수집 전략 구성.
-            </p>
-            <div class="tags"><span>Signal</span><span>Mobile DF</span></div>
-          </article>
-
-          <article class="card project">
-            <h3><a href="#">(예시) SQLCipher DB 자동 복호화 CLI 만들기</a></h3>
-            <p class="muted">exe 패키징까지 고려한 설계 메모.</p>
-            <div class="tags"><span>Python</span><span>SQLCipher</span></div>
-          </article>
-
-          <article class="card project">
-            <h3>
-              <a href="#">(예시) 포렌식 보고서에 꼭 들어갈 증거성 항목</a>
-            </h3>
-            <p class="muted">
-              아티팩트-행위-시각화를 한 묶음으로 정리하는 방법.
-            </p>
-            <div class="tags"><span>Reporting</span><span>DF</span></div>
-          </article>
-        </div>
-
-        <footer class="footer">
-          <p class="muted">© <span id="year"></span> 홍준희</p>
-        </footer>
-      </div>
+        <!-- Post list (나중에 사용) -->
+        <section class="posts" id="postList" hidden></section>
+      </section>
     </main>
 
-    <script>
-      document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    <script src="assets/js/blog.js"></script>
   </body>
 </html>
