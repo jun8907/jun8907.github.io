@@ -21,10 +21,12 @@
 * {
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
   background: var(--bg);
@@ -58,7 +60,6 @@ body {
   gap: 12px;
 }
 
-/* 검색: 아이콘 없이, 더 단정한 pill */
 .search input {
   width: 320px;
   height: 40px;
@@ -66,18 +67,21 @@ body {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.55);
   color: var(--text);
-  padding: 0 16px; /* ✅ 아이콘 없으니 왼쪽 padding 줄임 */
+  padding: 0 16px;
   outline: none;
   transition:
     border-color 0.15s ease,
     background 0.15s ease;
 }
+
 :root.dark .search input {
   background: rgba(15, 23, 48, 0.35);
 }
+
 .search input:focus {
   border-color: rgba(37, 99, 235, 0.45);
 }
+
 .search input::placeholder {
   color: rgba(107, 114, 128, 0.85);
 }
@@ -96,6 +100,7 @@ body {
 .page {
   padding: 26px 28px;
 }
+
 .wrap {
   max-width: 1100px;
   margin: 0 auto;
@@ -113,92 +118,183 @@ body {
   font-weight: 900;
   letter-spacing: -0.03em;
 }
+
 .subtitle {
   margin: 8px 0 0;
   color: var(--muted);
   font-weight: 650;
 }
 
-/* empty state: 아이콘 대신 아주 얇은 박스 + 카피 */
+/* empty */
 .empty {
-  min-height: calc(100vh - 64px - 140px);
+  min-height: 220px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  gap: 12px;
-}
-
-.empty-icon .doc {
-  width: 52px;
-  height: 52px;
-  border-radius: 10px;
-  border: 2px solid rgba(207, 214, 228, 0.55);
-  position: relative;
-  background: rgba(37, 99, 235, 0.04);
-}
-.empty-icon .doc::before {
-  content: '';
-  position: absolute;
-  left: 14px;
-  top: 14px;
-  width: 24px;
-  height: 4px;
-  border-radius: 3px;
-  background: rgba(107, 114, 128, 0.45);
-}
-.empty-icon .doc::after {
-  content: '';
-  position: absolute;
-  left: 14px;
-  top: 24px;
-  width: 18px;
-  height: 4px;
-  border-radius: 3px;
-  background: rgba(107, 114, 128, 0.3);
+  gap: 10px;
 }
 
 .empty-badge {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 14px;
+  padding: 7px 12px;
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(37, 99, 235, 0.06);
   color: var(--accent);
   font-weight: 800;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 .empty-title {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 900;
   color: var(--text);
   opacity: 0.85;
 }
+
 .empty-desc {
   margin: 0;
   font-size: 13px;
-  font-weight: 650;
+  font-weight: 600;
   color: var(--muted);
   max-width: 520px;
   line-height: 1.6;
 }
 
-/* posts (나중에 확장용) */
+/* posts */
 .posts {
-  margin-top: 18px;
+  margin-top: 20px;
+  display: grid;
+  gap: 12px;
 }
+
+.post-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 14px 16px;
+  background: transparent;
+  transition:
+    border-color 0.16s ease,
+    background 0.16s ease,
+    transform 0.16s ease;
+}
+
+.post-card:hover {
+  transform: translateY(-1px);
+  border-color: rgba(37, 99, 235, 0.35);
+  background: rgba(37, 99, 235, 0.03);
+}
+
+.post-meta {
+  margin-bottom: 6px;
+}
+
+.post-date {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.post-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.4;
+}
+
+.post-summary {
+  margin: 4px 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.post-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.post-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(37, 99, 235, 0.05);
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+}
+
 .brand {
   text-decoration: none;
   color: var(--text);
 }
+
 .brand-logo {
-  height: 136px; /* 로고 크기 */
+  height: 136px;
   width: auto;
   display: block;
   margin-top: 24px;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    padding: 0 14px;
+  }
+
+  .top-actions {
+    gap: 8px;
+  }
+
+  .search input {
+    width: 210px;
+  }
+
+  .page {
+    padding: 22px 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .post-card {
+    padding: 12px 14px;
+    border-radius: 12px;
+  }
+
+  .post-title {
+    font-size: 15px;
+  }
+
+  .post-summary {
+    font-size: 12px;
+  }
+
+  .post-tag {
+    font-size: 10px;
+    padding: 4px 7px;
+  }
+
+  .brand-logo {
+    height: 84px;
+    margin-top: 12px;
+  }
 }
